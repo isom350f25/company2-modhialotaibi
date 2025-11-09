@@ -13,12 +13,14 @@
     <ul>
         {% for employee in employees %}
             <li>
-                <strong>{{ employee.name }}</strong><br>
+                <a href="{% url 'employee_detail' employee.id %}"> 
+                </li><br>
+                      <strong>{{ employee.name }}</strong><br>
                 Position: {{ employee.position }}<br>
                 Joined: {{ employee.date_joined }}<br>
                 DOB: {{ employee.date_of_birth }}<br>
                 Phone: {{ employee.phone_number }}
-            </li>
+            </li><br>
         {% empty %}
             <li>No employees found.</li>
         {% endfor %}

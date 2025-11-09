@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Employee Detail For {{employee.name}}</title>
+    </head>
+    <body>
+        <div>
+        <h1>Employee Detail</h1>
+        <p><strong>Name:</strong> {{employee.name}} </p>
+        <p><strong>Position:</strong> {{employee.position}} </P>
+        <p><strong>Date Joined:</strong> {{employee.date_joined}} </P>
+        <p><strong>Date of Birth:</strong> {{employee.date_of_birth}} </P>
+        <p><strong>Phone Number:</strong> {{employee.phone_number}} </P>
+        <a href="{% url 'employee_list' %}"> Back to Employee list</a>
+        </div> 
+
+        <div>
+        <h2>Project</h2>
+        <ul>
+            {% for p in projects %}
+                 <li>{{ p.name }} <br>
+                    Start Date: {{ p.start_date }} <br>
+                    End Date: {{ p.end_date}} <br>
+                    Amount: {{p.amount}} <br>
+                </li>
+            {% endfor %}
+        </ul>
+        </div>
+    </body>
+    </html>
+
+
+
